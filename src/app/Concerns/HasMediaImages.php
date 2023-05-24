@@ -40,25 +40,25 @@ trait HasMediaImages
         $this
             ->addMediaConversion(\Str::lower(ImageSizes::THUMB->name))
             ->performOnCollections('post_images', 'featured_images')
-            ->fit(Manipulations::FIT_CROP, ImageSizes::THUMB->value)
+            ->fit(Manipulations::FIT_CROP, (int)ImageSizes::THUMB->value)
             ->nonOptimized();
 
         $this
             ->addMediaConversion(\Str::lower(ImageSizes::SMALL->name))
             ->performOnCollections('post_images', 'featured_images')
-            ->fit(Manipulations::FIT_CROP, ImageSizes::SMALL->value)
+            ->fit(Manipulations::FIT_CROP, (int)ImageSizes::SMALL->value)
             ->nonOptimized();
 
         $this
             ->addMediaConversion(\Str::lower(ImageSizes::MEDIUM->name))
             ->performOnCollections('post_images', 'featured_images')
-            ->fit(Manipulations::FIT_CROP, ImageSizes::MEDIUM->value)
+            ->fit(Manipulations::FIT_CROP, (int)ImageSizes::MEDIUM->value)
             ->nonOptimized();
 
         $this
             ->addMediaConversion(\Str::lower(ImageSizes::LARGE->name))
             ->performOnCollections('post_images', 'featured_images')
-            ->fit(Manipulations::FIT_CROP, ImageSizes::LARGE->value)
+            ->fit(Manipulations::FIT_CROP, (int)ImageSizes::LARGE->value)
             ->nonOptimized();
     }
 }

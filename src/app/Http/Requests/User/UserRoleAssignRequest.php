@@ -6,7 +6,7 @@ use App\Models\User;
 use App\Http\Requests\Request;
 use Illuminate\Http\Concerns\InteractsWithInput;
 use Illuminate\Validation\Rule;
-use App\Models\Enums\Roles;
+use App\Enums\Roles;
 
 class UserRoleAssignRequest extends Request
 {
