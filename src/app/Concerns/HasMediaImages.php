@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Models\Concerns;
+namespace App\Concerns;
 
 // Enums
-use App\Models\Enums\ImageSizes;
+use App\Enums\ImageSizes;
 
 // MediaLibrary
 use App\Models\MediaImage;

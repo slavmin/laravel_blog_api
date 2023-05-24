@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\Models\Concerns\HasUuid;
-use App\Models\Concerns\HasAuthor;
+use App\Concerns\HasUuid;
+use App\Concerns\HasAuthor;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;

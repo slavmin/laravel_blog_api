@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\MediaLibrary\MediaCollections\Models\Media as BaseMedia;
 
 // Enums
-use App\Models\Enums\ImageSizes;
+use App\Enums\ImageSizes;
 
 // Exceptions
 use Spatie\Image\Exceptions\InvalidManipulation;

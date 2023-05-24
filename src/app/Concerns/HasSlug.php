@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Concerns;
+namespace App\Concerns;
 
 use Illuminate\Support\Str;
 
