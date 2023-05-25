@@ -22,6 +22,6 @@ trait AskWithValidation
             $this->error($error);
         }
 
-        return $this->askWithValidation($message, $rules, $name);
+        return $this->askWithValidation($message, $rules, $name, $secret);
     }
 }
