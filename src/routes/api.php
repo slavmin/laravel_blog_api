@@ -16,6 +16,7 @@ use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Category\PublicCategoryController;
 
 // Auth
+use App\Http\Controllers\Api\Auth\MeController;
 use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\LogoutController;
 use App\Http\Controllers\Api\Auth\RegisterController;
@@ -99,6 +100,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 
     // Auth
     Route::group(['prefix' => 'auth'], function () {
+        Route::get('/user', MeController::class);
         Route::post('/logout', LogoutController::class);
     });
 });

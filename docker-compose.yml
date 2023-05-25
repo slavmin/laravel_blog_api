@@ -2,6 +2,7 @@ version: '3'
 
 networks:
   laravel:
+    external: false
 
 services:
   site:
@@ -11,6 +12,8 @@ services:
     container_name: nginx
     ports:
       - 80:80
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - ./src:/var/www/html:delegated
     depends_on:
@@ -80,6 +83,8 @@ services:
     container_name: php
     environment:
       PHP_MEMORY_LIMIT: 256M
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - ./src:/var/www/html:delegated
     networks:
