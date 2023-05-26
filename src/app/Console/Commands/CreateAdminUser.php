@@ -34,9 +34,9 @@ class CreateAdminUser extends Command
      */
     public function handle(): int
     {
-        $name = $this->option('name') ?? $this->askWithValidation('Name', ['string', 'min:4'], 'name');
-        $email = $this->option('email') ?? $this->askWithValidation('Email', ['string', 'email'], 'name');
-        $password = $this->option('password') ?? $this->askWithValidation('Password', ['string', 'min:8'], 'password', true);
+        $name = $this->option('name') ?? $this->askWithValidation('Name', ['min:4'], 'name');
+        $email = $this->option('email') ?? $this->askWithValidation('Email', ['email'], 'email');
+        $password = $this->option('password') ?? $this->askWithValidation('Password', ['min:8'], 'password', true);
 
         $user = User::create([
             'name' => $name,
