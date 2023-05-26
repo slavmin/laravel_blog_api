@@ -23,6 +23,15 @@ class Handler extends ExceptionHandler
     ];
 
     /**
+     * A list of the exception types that should not be reported.
+     *
+     * @var array
+     */
+    protected $dontReport = [
+        \App\Exceptions\JsonHttpException::class,
+    ];
+
+    /**
      * Render an exception into an HTTP response.
      * @throws Throwable
      */
