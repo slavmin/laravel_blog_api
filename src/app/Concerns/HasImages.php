@@ -3,7 +3,6 @@
 namespace App\Concerns;
 
 use App\Models\Image;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 trait HasImages

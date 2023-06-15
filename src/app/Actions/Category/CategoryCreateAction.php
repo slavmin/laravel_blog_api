@@ -14,8 +14,7 @@ final class CategoryCreateAction
         private readonly ?string $description,
         private readonly User    $author,
         private readonly ?string $parent_id,
-    )
-    {
+    ) {
     }
 
     public static function fromRequest(CategoryRequest $request): self

@@ -4,15 +4,14 @@ namespace App\Policies;
 
 use App\Models\User;
 use App\Models\Category;
-use Illuminate\Auth\Access\Response;
 
 class CategoryPolicy
 {
-    const CREATE = 'create';
+    public const CREATE = 'create';
 
-    const UPDATE = 'update';
+    public const UPDATE = 'update';
 
-    const DELETE = 'delete';
+    public const DELETE = 'delete';
 
 
     /**

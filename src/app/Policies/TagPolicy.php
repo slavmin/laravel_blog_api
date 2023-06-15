@@ -4,15 +4,14 @@ namespace App\Policies;
 
 use App\Models\Tag;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
 class TagPolicy
 {
-    const CREATE = 'create';
+    public const CREATE = 'create';
 
-    const UPDATE = 'update';
+    public const UPDATE = 'update';
 
-    const DELETE = 'delete';
+    public const DELETE = 'delete';
 
 
     /**

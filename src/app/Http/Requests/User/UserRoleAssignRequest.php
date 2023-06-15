@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests\User;
 
-use App\Models\User;
 use App\Http\Requests\Request;
 use Illuminate\Http\Concerns\InteractsWithInput;
 use Illuminate\Validation\Rule;

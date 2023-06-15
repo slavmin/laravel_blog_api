@@ -10,10 +10,10 @@ abstract class Request extends FormRequest
 {
     //use SendsAlerts;
 
-//    protected function failedValidation(Validator $validator): void
-//    {
-//        // $this->error('errors.fields');
-//
-//        parent::failedValidation($validator);
-//    }
+    //    protected function failedValidation(Validator $validator): void
+    //    {
+    //        // $this->error('errors.fields');
+    //
+    //        parent::failedValidation($validator);
+    //    }
 }

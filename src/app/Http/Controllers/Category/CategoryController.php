@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Category;
 
 use App\Models\Category;
-use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Access\AuthorizationException;

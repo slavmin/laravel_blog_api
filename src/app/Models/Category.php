@@ -23,7 +23,7 @@ class Category extends Model implements \Spatie\MediaLibrary\HasMedia
     use HasAuthor;
     use HasMediaImages;
 
-    const PER_PAGE = 100;
+    public const PER_PAGE = 100;
 
     /**
      * {@inheritdoc}

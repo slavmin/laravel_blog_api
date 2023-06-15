@@ -3,7 +3,6 @@
 namespace App\Actions\User;
 
 use App\Models\User;
-use App\Models\Enums\Roles;
 use Illuminate\Support\Facades\Auth;
 
 final class UserAssignRoleAction

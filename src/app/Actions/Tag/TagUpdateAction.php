@@ -3,7 +3,6 @@
 namespace App\Actions\Tag;
 
 use App\Models\Tag;
-use App\Models\User;
 use App\Http\Requests\Tag\TagRequest;
 
 final class TagUpdateAction
@@ -14,8 +13,7 @@ final class TagUpdateAction
         private readonly ?string $slug,
         private readonly ?string $description,
         // private readonly bool    $featured,
-    )
-    {
+    ) {
     }
 
     public static function fromRequest(Tag $tag, TagRequest $request): self
@@ -25,7 +23,7 @@ final class TagUpdateAction
             $request->title(),
             $request->input('slug'),
             $request->description(),
-        // $request->input('featured'),
+            // $request->input('featured'),
         );
     }
 

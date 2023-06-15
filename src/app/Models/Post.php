@@ -28,7 +28,7 @@ class Post extends Model implements \Spatie\MediaLibrary\HasMedia
     use HasCategories;
     use HasMediaImages;
 
-    const PER_PAGE = 16;
+    public const PER_PAGE = 16;
 
     /**
      * {@inheritdoc}

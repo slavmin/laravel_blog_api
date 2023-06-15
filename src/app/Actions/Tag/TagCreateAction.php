@@ -14,8 +14,7 @@ final class TagCreateAction
         private readonly ?string $description,
         private readonly User    $author,
         // private readonly bool    $featured,
-    )
-    {
+    ) {
     }
 
     public static function fromRequest(TagRequest $request): self
@@ -25,7 +24,7 @@ final class TagCreateAction
             $request->input('slug'),
             $request->description(),
             $request->author(),
-        // $request->input('featured'),
+            // $request->input('featured'),
         );
     }
 

@@ -2,7 +2,6 @@
 
 namespace App\Actions\Category;
 
-use App\Models\User;
 use App\Models\Category;
 use App\Http\Requests\Category\CategoryRequest;
 
@@ -14,8 +13,7 @@ final class CategoryUpdateAction
         private readonly ?string  $slug,
         private readonly ?string  $description,
         private readonly ?string  $parent_id,
-    )
-    {
+    ) {
     }
 
     public static function fromRequest(Category $category, CategoryRequest $request): self

@@ -19,7 +19,7 @@ class Tag extends Model
     use HasSlug;
     use HasAuthor;
 
-    const PER_PAGE = 100;
+    public const PER_PAGE = 100;
 
     /**
      * {@inheritdoc}

@@ -9,7 +9,7 @@ trait HasUuid
 {
     public static function bootHasUuid(): void
     {
-        static::creating(fn(Model $model) => $model->attributes['uuid'] = (string)Str::uuid());
+        static::creating(fn (Model $model) => $model->attributes['uuid'] = (string)Str::uuid());
     }
 
     public static function findByUuid(string $uuid): ?Model

@@ -2,7 +2,6 @@
 
 namespace App\Actions\Post;
 
-use App\Models\User;
 use App\Models\Post;
 use App\Http\Requests\Post\PostRequest;
 
@@ -16,8 +15,7 @@ final class PostUpdateAction
         private readonly array   $tags,
         private readonly array   $categories,
         // private readonly bool    $featured,
-    )
-    {
+    ) {
     }
 
     public static function fromRequest(Post $post, PostRequest $request): self
@@ -29,7 +27,7 @@ final class PostUpdateAction
             $request->description(),
             $request->tags(),
             $request->categories(),
-        // $request->input('featured'),
+            // $request->input('featured'),
         );
     }
 

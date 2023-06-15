@@ -3,17 +3,16 @@
 namespace App\Policies;
 
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
 class UserPolicy
 {
-    const CREATE = 'create';
+    public const CREATE = 'create';
 
-    const UPDATE = 'update';
+    public const UPDATE = 'update';
 
-    const DELETE = 'delete';
+    public const DELETE = 'delete';
 
-    const FORCE_DELETE = 'forceDelete';
+    public const FORCE_DELETE = 'forceDelete';
 
 
     /**
