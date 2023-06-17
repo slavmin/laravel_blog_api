@@ -31,6 +31,6 @@ class LoginController extends Controller
 
         $token = $request->user()->createToken('access_token');
 
-        return (new UserResource($request->user()))->additional(['meta' => ['token' => $token->plainTextToken]]);
+        return (new UserResource($request->user()))->additional(['token' => $token->plainTextToken]);
     }
 }

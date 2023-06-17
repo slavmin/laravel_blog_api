@@ -105,7 +105,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
 });
 
 // Auth routes
-Route::group(['middleware' => ['guest:api', 'throttle:5,1']], function () {
+Route::group(['middleware' => ['guest:api', 'throttle:10,1']], function () {
     Route::group(['prefix' => 'auth'], function () {
         Route::post('/login', LoginController::class);
         Route::post('/register', RegisterController::class);
