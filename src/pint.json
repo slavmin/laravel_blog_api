@@ -10,15 +10,15 @@
         "combine_consecutive_unsets": true,
         "concat_space": true,
         "declare_parentheses": true,
-        "declare_strict_types": true,
+        "declare_strict_types": false,
         "explicit_string_variable": true,
         "final_class": false,
         "final_internal_class": false,
         "fully_qualified_strict_types": true,
         "global_namespace_import": {
-            "import_classes": true,
-            "import_constants": true,
-            "import_functions": true
+            "import_classes": false,
+            "import_constants": false,
+            "import_functions": false
         },
         "is_null": true,
         "lambda_not_used_import": true,
