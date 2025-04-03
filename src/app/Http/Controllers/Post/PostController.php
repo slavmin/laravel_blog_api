@@ -32,13 +32,15 @@ class PostController extends Controller
      */
     public function store(PostRequest $request): JsonResponse
     {
-        //dd($request->allFiles());
-
         $this->authorize(PostPolicy::CREATE, Post::class);
 
         $post = PostCreateAction::fromRequest($request)->handle();
 
-        $post->addMedia($request->file('featured_image'))->toMediaCollection('featured_images');
+        $file = $request->file('featured_image');
+
+        if ($file?->isValid()) {
+            $post->addMedia($request->file('featured_image'))->toMediaCollection('featured_images');
+        }
 
         return response()->json($post);
     }
