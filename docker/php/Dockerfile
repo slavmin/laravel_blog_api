@@ -112,6 +112,6 @@ RUN echo "* * * * * laravel /usr/local/bin/php /var/www/html/artisan schedule:ru
 RUN chmod 0644 /etc/cron.d/laravel-scheduler
 
 COPY ./docker/php/php.ini "$PHP_INI_DIR/php.ini"
-#COPY ../../supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+#COPY ./docker/supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 RUN rm -rf /tmp/pear
