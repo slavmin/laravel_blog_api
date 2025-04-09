@@ -10,10 +10,10 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('taggables', function (Blueprint $table) {
+        Schema::create('taggables', function (Blueprint $table): void {
             $table->id();
             $table->foreignUuid('tag_id')
-                ->constrained((new \App\Models\Tag())->getTable(), 'uuid')
+                ->constrained((new App\Models\Tag())->getTable(), 'uuid')
                 ->cascadeOnDelete();
             $table->uuidMorphs('taggable');
 

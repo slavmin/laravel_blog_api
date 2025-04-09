@@ -32,7 +32,7 @@ final class CategoryCreateAction
     {
         $category = new Category([
             'title' => $this->title,
-            'slug' => !empty($this->slug) ? $this->slug : $this->title,
+            'slug' => ! empty($this->slug) ? $this->slug : $this->title,
             'description' => $this->description,
             'parent_id' => $this->parent_id,
         ]);

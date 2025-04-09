@@ -31,7 +31,7 @@ final class TagUpdateAction
     {
         $this->tag->update([
             'title' => $this->title,
-            'slug' => !empty($this->slug) ? $this->slug : $this->title,
+            'slug' => ! empty($this->slug) ? $this->slug : $this->title,
             'description' => $this->description,
             // 'featured' => $this->featured,
         ]);

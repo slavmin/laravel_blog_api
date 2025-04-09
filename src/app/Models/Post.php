@@ -13,20 +13,19 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
-
 // Helpers
 use Illuminate\Support\Str;
 
 class Post extends Model implements \Spatie\MediaLibrary\HasMedia
 {
-    use HasFactory;
-    use SoftDeletes;
-    use HasUuid;
-    use HasSlug;
-    use HasTags;
     use HasAuthor;
     use HasCategories;
+    use HasFactory;
     use HasMediaImages;
+    use HasSlug;
+    use HasTags;
+    use HasUuid;
+    use SoftDeletes;
 
     public const PER_PAGE = 16;
 

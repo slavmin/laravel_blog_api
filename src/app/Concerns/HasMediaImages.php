@@ -4,14 +4,12 @@ namespace App\Concerns;
 
 // Enums
 use App\Enums\ImageSizes;
-
 // MediaLibrary
 use App\Models\MediaImage;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-
 // Exceptions
 use Spatie\Image\Exceptions\InvalidManipulation;
 

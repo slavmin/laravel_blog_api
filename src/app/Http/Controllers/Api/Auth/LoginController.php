@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Login;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\ValidationException;
-
 use App\Http\Resources\User\UserResource;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,7 +21,7 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        if (!Auth::guard('web')->attempt($request->only(['email', 'password']))) {
+        if ( ! Auth::guard('web')->attempt($request->only(['email', 'password']))) {
             return response()->json([
                 'errors' => [
                     'email' => ['Sorry we couldn\'t sign you in with those details.']

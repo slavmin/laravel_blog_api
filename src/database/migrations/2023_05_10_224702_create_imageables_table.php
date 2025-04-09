@@ -10,10 +10,10 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('imageables', function (Blueprint $table) {
+        Schema::create('imageables', function (Blueprint $table): void {
             $table->id();
             $table->foreignUuid('image_id')
-                ->constrained((new \App\Models\Image())->getTable(), 'uuid')
+                ->constrained((new App\Models\Image())->getTable(), 'uuid')
                 ->cascadeOnDelete();
             $table->uuidMorphs('imageable');
 

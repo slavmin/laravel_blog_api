@@ -6,7 +6,6 @@ use App\Models\Category;
 use Illuminate\Http\JsonResponse;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Access\AuthorizationException;
-
 use App\Policies\CategoryPolicy;
 use App\Actions\Category\CategoryCreateAction;
 use App\Actions\Category\CategoryUpdateAction;

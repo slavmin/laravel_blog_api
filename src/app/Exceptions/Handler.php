@@ -2,7 +2,6 @@
 
 namespace App\Exceptions;
 
-use Throwable;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Exceptions\ThrottleRequestsException;
@@ -28,14 +27,14 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        \App\Exceptions\JsonHttpException::class,
+        JsonHttpException::class,
     ];
 
     /**
      * Render an exception into an HTTP response.
-     * @throws Throwable
+     * @throws \Throwable
      */
-    public function render($request, Throwable $e): \Illuminate\Http\Response|\Illuminate\Http\JsonResponse|\Symfony\Component\HttpFoundation\Response
+    public function render($request, \Throwable $e): \Illuminate\Http\Response|\Illuminate\Http\JsonResponse|\Symfony\Component\HttpFoundation\Response
     {
         // Force to application/json rendering on API calls
         if ($request->is('api*')) {
@@ -72,20 +71,16 @@ class Handler extends ExceptionHandler
      */
     public function register(): void
     {
-        $this->renderable(function (ModelNotFoundException $exception, $request) {
-            return response()->json([
-                'status' => 404,
-                'message' => 'Record not found',
-                'error' => 'Record not found',
-            ], 404);
-        });
+        $this->renderable(fn (ModelNotFoundException $exception, $request) => response()->json([
+            'status' => 404,
+            'message' => 'Record not found',
+            'error' => 'Record not found',
+        ], 404));
 
-        $this->reportable(function (Throwable $e) {
-            return response()->json([
-                'status' => 500,
-                'message' => $e->getMessage(),
-                'error' => $e->getTraceAsString(),
-            ], 500);
-        });
+        $this->reportable(fn (\Throwable $e) => response()->json([
+            'status' => 500,
+            'message' => $e->getMessage(),
+            'error' => $e->getTraceAsString(),
+        ], 500));
     }
 }

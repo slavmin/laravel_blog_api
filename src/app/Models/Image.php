@@ -11,9 +11,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Image extends Model
 {
+    use HasAuthor;
     use HasFactory;
     use HasUuid;
-    use HasAuthor;
 
 
     /**

@@ -10,12 +10,12 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table): void {
             $table->id();
             $table->uuid('uuid')->unique();
             $table->foreignUuid('author_id')
                 ->nullable()
-                ->constrained((new \App\Models\User())->getTable(), 'uuid')
+                ->constrained((new App\Models\User())->getTable(), 'uuid')
                 ->nullOnDelete();
             $table->string('title')->fulltext();
             $table->string('slug')->unique();
@@ -30,10 +30,10 @@ return new class () extends Migration {
             $table->softDeletes();
         });
 
-        Schema::table('categories', function (Blueprint $table) {
+        Schema::table('categories', function (Blueprint $table): void {
             $table->foreignUuid('parent_id')->after('uuid')
                 ->nullable()
-                ->constrained((new \App\Models\Category())->getTable(), 'uuid')
+                ->constrained((new App\Models\Category())->getTable(), 'uuid')
                 ->cascadeOnDelete();
         });
     }

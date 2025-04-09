@@ -16,12 +16,12 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Category extends Model implements \Spatie\MediaLibrary\HasMedia
 {
-    use HasFactory;
-    use SoftDeletes;
-    use HasUuid;
-    use HasSlug;
     use HasAuthor;
+    use HasFactory;
     use HasMediaImages;
+    use HasSlug;
+    use HasUuid;
+    use SoftDeletes;
 
     public const PER_PAGE = 100;
 

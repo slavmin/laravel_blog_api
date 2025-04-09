@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Category;
 
 use App\Models\Category;
 use App\Http\Controllers\Controller;
-
 // Resource
 use App\Http\Resources\Category\CategoryResource;
 use App\Http\Resources\Category\CategoryCollection;

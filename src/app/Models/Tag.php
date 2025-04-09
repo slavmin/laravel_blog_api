@@ -13,11 +13,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Tag extends Model
 {
-    use HasFactory;
-    use SoftDeletes;
-    use HasUuid;
-    use HasSlug;
     use HasAuthor;
+    use HasFactory;
+    use HasSlug;
+    use HasUuid;
+    use SoftDeletes;
 
     public const PER_PAGE = 100;
 

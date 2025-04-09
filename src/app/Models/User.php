@@ -7,12 +7,10 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Casts\AsArrayObject;
-
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
 // Spatie
 use App\Enums\Roles;
 use Spatie\Permission\Traits\HasRoles;
@@ -20,13 +18,13 @@ use Spatie\Permission\Traits\HasPermissions;
 
 class User extends Authenticatable
 {
-    use HasFactory;
     use HasApiTokens;
+    use HasFactory;
+    use HasPermissions;
+    use HasRoles;
+    use HasUuid;
     use Notifiable;
     use SoftDeletes;
-    use HasUuid;
-    use HasRoles;
-    use HasPermissions;
 
     /**
      * {@inheritdoc}

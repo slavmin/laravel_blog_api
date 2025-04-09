@@ -8,7 +8,6 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Access\AuthorizationException;
-
 use App\Actions\User\UserAssignRoleAction;
 use App\Actions\User\UserRemoveRoleAction;
 use App\Http\Requests\User\UserRoleAssignRequest;

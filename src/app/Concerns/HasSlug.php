@@ -30,7 +30,7 @@ trait HasSlug
 
         while ($this->slugExists($slug, $this->exists ? $this->getAttribute('id') : null)) {
             $counter++;
-            $slug = $originalSlug . '-' . $counter;
+            $slug = $originalSlug.'-'.$counter;
         }
 
         return $slug;

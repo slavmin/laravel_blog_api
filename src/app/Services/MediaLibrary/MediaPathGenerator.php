@@ -12,7 +12,7 @@ class MediaPathGenerator implements PathGenerator
      */
     public function getPath(Media $media): string
     {
-        return $this->getBasePath($media) . '/';
+        return $this->getBasePath($media).'/';
     }
 
     /*
@@ -20,7 +20,7 @@ class MediaPathGenerator implements PathGenerator
      */
     public function getPathForConversions(Media $media): string
     {
-        return $this->getBasePath($media) . '/conversions/';
+        return $this->getBasePath($media).'/conversions/';
     }
 
     /*
@@ -28,7 +28,7 @@ class MediaPathGenerator implements PathGenerator
      */
     public function getPathForResponsiveImages(Media $media): string
     {
-        return $this->getBasePath($media) . '/responsive-images/';
+        return $this->getBasePath($media).'/responsive-images/';
     }
 
     /*
@@ -40,10 +40,10 @@ class MediaPathGenerator implements PathGenerator
 
         $modelType = \Arr::last(explode('\\', $media->getAttribute('model_type')));
 
-        $path = \Str::lower($modelType) . '/' . $media->getAttribute('model_id') . '/' . $media->getAttribute('uuid');
+        $path = \Str::lower($modelType).'/'.$media->getAttribute('model_id').'/'.$media->getAttribute('uuid');
 
-        if ($prefix !== '') {
-            return $prefix . '/' . $path;
+        if ('' !== $prefix) {
+            return $prefix.'/'.$path;
         }
 
         return $path;

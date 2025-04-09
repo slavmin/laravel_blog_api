@@ -2,9 +2,7 @@
 
 namespace App\Exceptions;
 
-use Exception;
-
-class JsonHttpException extends Exception
+class JsonHttpException extends \Exception
 {
     /** Map of standard HTTP status code/reason phrases */
     private const PHRASES = [
@@ -70,7 +68,7 @@ class JsonHttpException extends Exception
 
     public function render(): \Illuminate\Http\JsonResponse
     {
-        $errorCode = !empty($this->getCode()) ? $this->getCode() : 400;
+        $errorCode = ! empty($this->getCode()) ? $this->getCode() : 400;
 
         return response()->json([
             'statusCode' => $errorCode,

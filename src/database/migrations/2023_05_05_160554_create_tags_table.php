@@ -10,11 +10,11 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('tags', function (Blueprint $table) {
+        Schema::create('tags', function (Blueprint $table): void {
             $table->id();
             $table->uuid('uuid')->unique();
             $table->foreignUuid('author_id')->nullable()
-                ->constrained((new \App\Models\User())->getTable(), 'uuid')
+                ->constrained((new App\Models\User())->getTable(), 'uuid')
                 ->nullOnDelete();
             $table->string('title')->unique();
             $table->string('slug')->unique();

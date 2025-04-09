@@ -10,10 +10,10 @@ return new class () extends Migration {
      */
     public function up(): void
     {
-        Schema::create('categorizables', function (Blueprint $table) {
+        Schema::create('categorizables', function (Blueprint $table): void {
             $table->id();
             $table->foreignUuid('category_id')
-                ->constrained((new \App\Models\Category())->getTable(), 'uuid')
+                ->constrained((new App\Models\Category())->getTable(), 'uuid')
                 ->cascadeOnDelete();
             $table->uuidMorphs('categorizable');
 

@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Tag;
 
 use App\Models\Tag;
 use App\Http\Controllers\Controller;
-
 // Resource
 use App\Http\Resources\Tag\TagResource;
 use App\Http\Resources\Tag\TagCollection;
