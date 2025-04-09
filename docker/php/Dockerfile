@@ -2,7 +2,6 @@ FROM php:8.3-fpm
 
 ADD ./docker/php/www.conf /usr/local/etc/php-fpm.d/
 
-#RUN addgroup -g 1000 laravel && adduser -G laravel -g laravel -s /bin/sh -D laravel
 RUN groupadd -g 1000 laravel
 RUN useradd -u 1000 -ms /bin/bash -g laravel laravel
 
@@ -18,7 +17,6 @@ RUN apt-get update && \
         libmemcached-dev \
         libzip-dev \
         libz-dev \
-        libzip-dev \
         libpq-dev \
         libjpeg-dev \
         libpng-dev \

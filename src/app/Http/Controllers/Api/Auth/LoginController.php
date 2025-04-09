@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Login;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\ValidationException;
 
@@ -30,6 +31,8 @@ class LoginController extends Controller
         }
 
         $token = $request->user()->createToken('access_token');
+
+        event(new Login(config('defaults.guard'), $request->user(), false));
 
         return (new UserResource($request->user()))->additional(['token' => $token->plainTextToken]);
     }

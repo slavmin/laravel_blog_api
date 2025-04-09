@@ -38,7 +38,7 @@ class CreateAdminUser extends Command
         $email = $this->option('email') ?? $this->askWithValidation('Email', ['email'], 'email');
         $password = $this->option('password') ?? $this->askWithValidation('Password', ['min:8'], 'password', true);
 
-        $user = User::create([
+        $user = User::query()->create([
             'name' => $name,
             'email' => $email,
             'password' => Hash::make($password),
